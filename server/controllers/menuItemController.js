@@ -19,7 +19,19 @@ const getPizzas=async (req,res)=>{
     }
 }
 
+const editPizza=async (req,res)=>{
+    const { id } = req.params;
+    const { name, description, price, imageUrl } = req.body;
+    try {
+        const updatedPizza = await MenuItem.findByIdAndUpdate(id, { name, description, price, imageUrl }, {new: true});
+        res.status(200).json({updatedPizza,msg:"pizza updated successfully"});
+    } catch (error) {
+        res.status(400).json({error: error.message});
+    }
+}
+
 module.exports = {
     newPizza,
-    getPizzas
+    getPizzas,
+    editPizza
 };
