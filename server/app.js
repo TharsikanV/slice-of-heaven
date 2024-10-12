@@ -10,7 +10,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 const auth=require('./routes/auth');
+const menu=require('./routes/menu');
 
 app.use('/api/v1/',auth);
+app.use('/api/v1/',menu);
 
 module.exports = app;
