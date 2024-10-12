@@ -10,6 +10,16 @@ async function newPizza(req,res){
     }
 }
 
+const getPizzas=async (req,res)=>{
+    try {
+        const pizzas = await MenuItem.find();
+        res.status(200).json(pizzas);
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
+
 module.exports = {
-    newPizza
+    newPizza,
+    getPizzas
 };
