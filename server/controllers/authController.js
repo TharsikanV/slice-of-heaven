@@ -48,8 +48,19 @@ async function loginAdmin(req, res) {
         return res.status(500).json({ error: error.message });
     }
 }
+async function logoutAdmin(req, res){
+    res.cookie('token',null,{
+        expires:new Date(Date.now()),
+        httpOnly:true
+    })
+    .status(200)
+    .json({
+        msg:"You have been logged out"
+    })
+}
 
 module.exports = {
     registerAdmin,
-    loginAdmin
+    loginAdmin,
+    logoutAdmin,
 }
