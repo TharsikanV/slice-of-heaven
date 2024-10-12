@@ -30,8 +30,19 @@ const editPizza=async (req,res)=>{
     }
 }
 
+const deletePizza=async (req,res)=>{
+    const { id } = req.params;
+    try {
+        await MenuItem.findByIdAndDelete(id);
+        res.status(200).json({msg:"pizza deleted successfully"});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
+
 module.exports = {
     newPizza,
     getPizzas,
-    editPizza
-};
+    editPizza,
+    deletePizza
+ };

@@ -1,10 +1,15 @@
-const {newPizza,getPizzas,editPizza}=require('../controllers/menuItemController');
+const {
+    newPizza,
+    getPizzas,
+    editPizza,
+    deletePizza}=require('../controllers/menuItemController');
 const express=require('express');
 
 const router=express.Router();
 
 router.post('/menu',newPizza);
 router.get('/menu',getPizzas);
-router.route('/menu/:id').put(editPizza);
+router.put('/menu/:id',editPizza);
+router.delete('/menu/:id',deletePizza);
 
 module.exports=router;
