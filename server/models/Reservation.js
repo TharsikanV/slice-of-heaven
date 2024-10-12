@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const reservationSchema=new Schema(
+const reservationSchema=new mongoose.Schema(
     {
         name: {
             type: String,
@@ -28,4 +28,6 @@ const reservationSchema=new Schema(
     }
 );
 
-module.exports=mongoose.model('Reservation', reservationSchema);
+const ReservationModel=mongoose.model('Reservation', reservationSchema);
+
+module.exports=ReservationModel;
