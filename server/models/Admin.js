@@ -13,6 +13,12 @@ const adminSchema=new Schema({
     password: {
         type: String,
         required: true
+    },
+    resetPasswordToken:String,
+    resetPasswordTokenExpire:Date,
+    },
+    {
+        timestamps: true
     }
-})
+)
 module.exports=mongoose.model('Admin',adminSchema);
