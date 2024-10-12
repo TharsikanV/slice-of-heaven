@@ -11,8 +11,10 @@ app.use(cookieParser());
 
 const auth=require('./routes/auth');
 const menu=require('./routes/menu');
+const reservation=require('./routes/reservation');
 
 app.use('/api/v1/',auth);
 app.use('/api/v1/',menu);
+app.use('/api/v1/',reservation);
 
 module.exports = app;
