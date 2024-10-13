@@ -3,6 +3,7 @@ import {Rotes,BrowserRouter as Router,Route, Routes} from 'react-router-dom';
 import Header from './components/layouts/Header';
 import HeroSection from './components/Herosection';
 import FoodMenu from './components/menu/FoodMenu.js';
+import MenuItems from './components/menu/MenuItems.js';
 import Offer from './components/offer/Offer.js';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <HeroSection/>
         <FoodMenu/>
         <Offer/>
+        <MenuItems/>
         <Routes>
 
          
