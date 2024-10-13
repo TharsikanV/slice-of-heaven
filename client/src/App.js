@@ -5,6 +5,8 @@ import HeroSection from './components/Herosection';
 import FoodMenu from './components/menu/FoodMenu.js';
 import MenuItems from './components/menu/MenuItems.js';
 import Offer from './components/offer/Offer.js';
+import ExpertChefs from './components/chefs/ExpertChefs.js';
+import Reservation from './components/user/Reservation.js';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <FoodMenu/>
         <Offer/>
         <MenuItems/>
+        <ExpertChefs/>
+        <Reservation/>
         <Routes>
 
          
