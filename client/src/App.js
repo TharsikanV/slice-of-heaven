@@ -7,6 +7,7 @@ import MenuItems from './components/menu/MenuItems.js';
 import Offer from './components/offer/Offer.js';
 import ExpertChefs from './components/chefs/ExpertChefs.js';
 import Reservation from './components/user/Reservation.js';
+import ShowBlogs from './components/blogs/ShowBlogs.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <MenuItems/>
         <ExpertChefs/>
         <Reservation/>
+        <ShowBlogs/>
         <Routes>
 
          

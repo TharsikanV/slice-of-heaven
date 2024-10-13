@@ -14,8 +14,16 @@ const reservationSchema=new mongoose.Schema(
             type: Date, 
             required: true 
         },
+        time:{
+            type: String,
+            required: true
+        },
         people:{
             type: Number,
+            required: true
+        },
+        message:{
+            type: String,
             required: true
         },
         status: {

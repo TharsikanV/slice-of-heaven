@@ -1,13 +1,15 @@
 const Reservation=require('../models/Reservation');
 
 const submitReservation= async(req,res)=>{
-    const { name, contact, date, people } = req.body;
+    const { name, contact, date,time,message,people } = req.body;
 
     try {
         const newReservation = new Reservation({
             name,
             contact,
             date,
+            time,
+            message,
             people
         });
         await newReservation.save();
