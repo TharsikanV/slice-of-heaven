@@ -13,7 +13,7 @@ const submitReservation= async(req,res)=>{
             people
         });
         await newReservation.save();
-        res.status(200).json({newReservation});
+        res.status(200).json({success:true,newReservation});
     } catch(err){
         res.status(500).json({err});
     }

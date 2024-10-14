@@ -39,7 +39,7 @@ async function loginAdmin(req, res) {
             if (!isMatch) {
                 return res.status(400).json({ msg: 'Invalid email or password' });
             }
-            sendToken(admin,200,res);
+            sendToken(admin, 200, res);
         }
 
 
@@ -48,15 +48,16 @@ async function loginAdmin(req, res) {
         return res.status(500).json({ error: error.message });
     }
 }
-async function logoutAdmin(req, res){
-    res.cookie('token',null,{
-        expires:new Date(Date.now()),
-        httpOnly:true
-    })
-    .status(200)
-    .json({
-        msg:"You have been logged out"
-    })
+async function logoutAdmin(req, res) {
+
+    res.status(200)
+    .cookie('token', null, {
+        expires: new Date(Date.now()),
+        httpOnly: true
+    }).json({
+            success: true,
+            msg: "You have been logged out"
+        })
 }
 
 module.exports = {

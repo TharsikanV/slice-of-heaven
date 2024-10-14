@@ -1,7 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaSearch, FaShoppingCart, FaLinkedinIn, FaFacebook, FaInstagram, FaTwitter, FaMapMarkerAlt } from "react-icons/fa";
+import axios from "axios";
+import { toast } from "react-toastify";
+
 
 export default function Header() {
+    const authToken = localStorage.getItem('authToken');
+    const navigate = useNavigate()
+    const handleLogout = async () => {
+        try {
+            const URL = `${process.env.REACT_APP_BACKEND_URL}/api/v1/logout`;
+            const response = await axios.get(URL ,{}, { withCredentials: true });
+
+            if (response.data.success) {
+                toast(response.data.msg, {
+                    position: "top-center",
+                    type: 'success',
+                })
+                localStorage.removeItem('authToken');
+                navigate('/login');
+            }
+
+        } catch (error) {
+            console.error('Logout failed:', error);
+            toast("Logout failed", {
+                position: "top-center",
+                type: 'error',
+            })
+        }
+    };
     return (
         <header className="bg-red-500 text-white py-4 px-8">
             <div className="flex justify-between">
@@ -14,6 +41,15 @@ export default function Header() {
                         <Link to="/pages" className="hover:text-gray-200">PAGES+</Link>
                         <Link to="/news" className="hover:text-gray-200">NEWS+</Link>
                         <Link to="/contact" className="hover:text-gray-200">CONTACT US</Link>
+                        {!authToken && (<Link to="/login" className="hover:text-gray-200">Login</Link>)}
+                        {authToken && (<button
+                            onClick={handleLogout}
+                            className="hover:text-gray-200 px-4 py-2 bg-red-500 text-white rounded-lg transition hover:bg-red-600"
+                        >
+                            Logout
+                        </button>)}
+                        {authToken && (<Link to="/admin/dashboard" className="hover:text-gray-200">Dashboard</Link>)}
+                        
                     </nav>
                 </div>
                 <div className="flex flex-col">

@@ -4,8 +4,8 @@ import { toast } from 'react-toastify';
 
 export default function Reservation() {
   const [formData, setFormData] = useState({
-    name:'tharsikan',
-    contact:'0766413644',
+    name: 'tharsikan',
+    contact: '0766413644',
     date: '',
     time: '',
     people: '',
@@ -13,31 +13,47 @@ export default function Reservation() {
   });
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+    setFormData((preve) => {
+      return {
+        ...preve,
+        [e.target.name]: e.target.value
+      };
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const URL=`${process.env.REACT_APP_BACKEND_URL}/api/v1/reservation`;
+    const URL = `${process.env.REACT_APP_BACKEND_URL}/api/v1/reservation`;
 
     try {
       const response = await axios.post(URL, formData);
-      console.log(response);
-      toast('Reservation Submitted Successfully', {
-        // position:toast.POSITION.BOTTOM_CENTER,
-        type: 'success',
-        onOpen: () => {//toaster vara error ah null aakkanum
-        }
-    })
-      
+      console.log(response.data.success);
+      if (response.data.success) {
+        setFormData((prevState) => {
+          return {
+            ...prevState,
+            date: '',
+            time: '',
+            people: '',
+            message: ''
+          }
+          
+        });
+        toast("Submited Reservation", {
+          position: "top-center",
+          type: 'success',
+        })
+      }
     } catch (error) {
       console.error('Error:', error);
-      toast.error(error?.response?.data?.message)
-      
+      toast("Reservation Failed", {
+        position: "top-center",
+        type: 'error',
+      })
+
+
     }
+    console.log(formData);
   };
 
   return (
