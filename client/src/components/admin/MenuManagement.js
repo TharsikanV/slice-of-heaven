@@ -36,7 +36,7 @@ export default function MenuManagement() {
       if (editing) {
         try {
           // Update existing pizza
-          const response= await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${editPizzaId}`, formData,{ withCredentials: true });
+          const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${editPizzaId}`, formData, { withCredentials: true });
           toast(response.data.msg, {
             position: "top-center",
             type: 'success',
@@ -47,11 +47,11 @@ export default function MenuManagement() {
             type: 'error',
           })
         }
-        
+
       } else {
         try {
           // Add new pizza
-        const response= await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu`, formData,{ withCredentials: true });
+          const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu`, formData, { withCredentials: true });
           toast(response.data.msg, {
             position: "top-center",
             type: 'success',
@@ -62,7 +62,7 @@ export default function MenuManagement() {
             type: 'error',
           })
         }
-        
+
       }
       // Reset form and fetch pizzas again
       setFormData({ name: '', description: '', price: '', imageUrl: '' });
@@ -88,7 +88,7 @@ export default function MenuManagement() {
   // Handle delete button click
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${id}`,{ withCredentials: true });
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${id}`, { withCredentials: true });
       const updatedPizzas = pizzas.filter((pizza) => pizza._id !== id);
       setPizzas(updatedPizzas);
     } catch (error) {
@@ -149,7 +149,7 @@ export default function MenuManagement() {
         </button>
       </form>
 
-      <div className="bg-white rounded-lg shadow-md p-6">
+      {/* <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-xl font-bold mb-4">Pizza List</h2>
         <ul className="space-y-4">
           {pizzas.map((pizza) => (
@@ -174,7 +174,46 @@ export default function MenuManagement() {
             </li>
           ))}
         </ul>
+      </div> */}
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h2 className="text-xl font-bold mb-4">Pizza List</h2>
+        <ul className="space-y-4">
+          {pizzas.map((pizza) => (
+            <li key={pizza._id} className="flex justify-between items-center border-b py-4">
+              {/* Pizza Image */}
+              <div className="w-20 h-20 flex-shrink-0">
+                <img
+                  src={pizza.imageUrl} // Assuming pizza.imageUrl contains the image link
+                  alt={pizza.name}
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+
+              {/* Pizza Details */}
+              <div className="ml-4 flex-1">
+                <h3 className="text-lg font-semibold">{pizza.name}</h3>
+                <p className="text-gray-700">{pizza.description}</p>
+                <p className="text-gray-600">Price: ${pizza.price}</p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex space-x-2">
+                <button
+                  onClick={() => handleEdit(pizza)}
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(pizza._id)}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
+
     </div>
   );
 }
