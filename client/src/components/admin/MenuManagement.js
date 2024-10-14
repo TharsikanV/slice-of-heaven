@@ -1,103 +1,6 @@
-// import React, { useState } from 'react';
-
-// export default function MenuManagement() {
-//   const [menuItems, setMenuItems] = useState([]);
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     description: '',
-//     price: '',
-//     imageUrl: '',
-//   });
-
-//   const handleInputChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleAddItem = () => {
-//     setMenuItems([...menuItems, formData]);
-//     setFormData({
-//       name: '',
-//       description: '',
-//       price: '',
-//       imageUrl: '',
-//     });
-//   };
-
-//   const handleDeleteItem = (index) => {
-//     const updatedMenu = menuItems.filter((item, i) => i !== index);
-//     setMenuItems(updatedMenu);
-//   };
-
-//   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg">
-//       <h2 className="text-xl font-bold mb-4">Menu Management</h2>
-
-//       <div className="space-y-4">
-//         <input
-//           type="text"
-//           name="name"
-//           value={formData.name}
-//           onChange={handleInputChange}
-//           placeholder="Pizza Name"
-//           className="border-gray-300 rounded-lg p-2 w-full"
-//         />
-//         <input
-//           type="text"
-//           name="description"
-//           value={formData.description}
-//           onChange={handleInputChange}
-//           placeholder="Description"
-//           className="border-gray-300 rounded-lg p-2 w-full"
-//         />
-//         <input
-//           type="number"
-//           name="price"
-//           value={formData.price}
-//           onChange={handleInputChange}
-//           placeholder="Price"
-//           className="border-gray-300 rounded-lg p-2 w-full"
-//         />
-//         <input
-//           type="text"
-//           name="imageUrl"
-//           value={formData.imageUrl}
-//           onChange={handleInputChange}
-//           placeholder="Image URL"
-//           className="border-gray-300 rounded-lg p-2 w-full"
-//         />
-//         <button
-//           onClick={handleAddItem}
-//           className="bg-green-500 text-white py-2 px-4 rounded-lg font-bold hover:bg-green-600 transition"
-//         >
-//           Add Pizza
-//         </button>
-//       </div>
-
-//       <h3 className="text-lg font-bold mt-6">Pizza Menu</h3>
-//       <ul className="space-y-4 mt-4">
-//         {menuItems.map((item, index) => (
-//           <li key={index} className="border-b pb-4">
-//             <h4 className="font-bold">{item.name}</h4>
-//             <p>{item.description}</p>
-//             <p>${item.price}</p>
-//             <img src={item.imageUrl} alt={item.name} className="w-32 mt-2" />
-//             <button
-//               onClick={() => handleDeleteItem(index)}
-//               className="bg-red-500 text-white py-1 px-3 rounded-lg mt-2"
-//             >
-//               Delete
-//             </button>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function MenuManagement() {
   const [pizzas, setPizzas] = useState([]);
@@ -131,11 +34,35 @@ export default function MenuManagement() {
     e.preventDefault();
     try {
       if (editing) {
-        // Update existing pizza
-        await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${editPizzaId}`, formData);
+        try {
+          // Update existing pizza
+          const response= await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${editPizzaId}`, formData,{ withCredentials: true });
+          toast(response.data.msg, {
+            position: "top-center",
+            type: 'success',
+          })
+        } catch (error) {
+          toast(error?.response?.data?.msg, {
+            position: "top-center",
+            type: 'error',
+          })
+        }
+        
       } else {
-        // Add new pizza
-        await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu`, formData);
+        try {
+          // Add new pizza
+        const response= await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu`, formData,{ withCredentials: true });
+          toast(response.data.msg, {
+            position: "top-center",
+            type: 'success',
+          })
+        } catch (error) {
+          toast(error?.response?.data?.msg, {
+            position: "top-center",
+            type: 'error',
+          })
+        }
+        
       }
       // Reset form and fetch pizzas again
       setFormData({ name: '', description: '', price: '', imageUrl: '' });
@@ -144,21 +71,24 @@ export default function MenuManagement() {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu`);
       setPizzas(response.data);
     } catch (error) {
-      console.error('Error saving pizza:', error);
+      toast(`Error saving pizza:${error}`, {
+        position: "top-center",
+        type: 'error',
+      })
     }
   };
 
-  // Handle edit button click
+  /////////// Handle edit button click
   const handleEdit = (pizza) => {
     setFormData(pizza);
     setEditing(true);
-    setEditPizzaId(pizza._id); // Assuming pizza._id is the unique identifier
+    setEditPizzaId(pizza._id);
   };
 
   // Handle delete button click
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/v1/menu/${id}`,{ withCredentials: true });
       const updatedPizzas = pizzas.filter((pizza) => pizza._id !== id);
       setPizzas(updatedPizzas);
     } catch (error) {
