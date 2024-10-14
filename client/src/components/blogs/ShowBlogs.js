@@ -10,7 +10,7 @@ export default function ShowBlogs() {
                     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                             className="w-full h-48 object-cover"
-                            src="https://via.placeholder.com/400x300.png?text=Blog+1"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHNZMWHRf5nvU8qbm0er7lPC6xDX4sHOCQFw&s"
                             alt="Blog 1"
                         />
                         <div className="p-4">
@@ -33,7 +33,7 @@ export default function ShowBlogs() {
                     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                             className="w-full h-48 object-cover"
-                            src="https://via.placeholder.com/400x300.png?text=Blog+2"
+                            src="https://img.freepik.com/premium-photo/pizza-sits-table-with-other-foods-it_1085346-161978.jpg"
                             alt="Blog 2"
                         />
                         <div className="p-4">
@@ -56,7 +56,7 @@ export default function ShowBlogs() {
                     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img
                             className="w-full h-48 object-cover"
-                            src="https://via.placeholder.com/400x300.png?text=Blog+3"
+                            src="https://dminteriors.lk/wp-content/uploads/2024/04/Pizza-Shop-Interior-Design-Ideas-4.jpg"
                             alt="Blog 3"
                         />
                         <div className="p-4">

@@ -14,6 +14,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import AdminDashboard from './components/admin/AdminDashboard.js';
 import MenuManagement from './components/admin/MenuManagement.js';
 import ReservationManagement from './components/admin/ReservationManagement.js';
+import Footer from './components/layouts/Footer.js';
+import FoodGallery from './components/menu/FoodGallery.js';
+import DownloadAppSection from './components/user/DownloadAppSection.js';
 // import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
@@ -33,9 +36,12 @@ function App() {
             <FoodMenu />
             <Offer />
             <MenuItems />
+            <DownloadAppSection/>
             <ExpertChefs />
             <Reservation />
             <ShowBlogs />
+            <FoodGallery/>
+            <Footer/>
             </>
             
           } />

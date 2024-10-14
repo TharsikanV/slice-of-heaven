@@ -30,11 +30,11 @@ function ExpertChefs() {
         <p className="text-lg">Global 5K+ Happy Sponsors With Us</p>
       </div>
       <div className="flex justify-center space-x-6 mb-10">
-        <img src="#" alt="Sponsor 1" className="h-12" />
-        <img src="#" alt="Sponsor 2" className="h-12" />
-        <img src="#" alt="Sponsor 3" className="h-12" />
-        <img src="#" alt="Sponsor 4" className="h-12" />
-        <img src="#" alt="Sponsor 5" className="h-12" />
+        <img src="../images/sponser1.png" alt="Sponsor 1" className="h-12" />
+        <img src="../images/sponser2.jpg" alt="Sponsor 2" className="h-12" />
+        <img src="../images/sponser3.png" alt="Sponsor 3" className="h-12" />
+        <img src="../images/sponser4.jpg" alt="Sponsor 4" className="h-12" />
+        <img src="../images/sponser5.jpg" alt="Sponsor 5" className="h-12" />
       </div>
     </div>
   );
