@@ -32,6 +32,8 @@ export default function Reservation() {
         setFormData((prevState) => {
           return {
             ...prevState,
+            contact:'',
+            name:'',
             date: '',
             time: '',
             people: '',

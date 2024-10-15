@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function AdminLogin() {
+export default function AdminLogin({setIsLoggedIn}) {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -23,6 +23,7 @@ export default function AdminLogin() {
     try {
       const response = await axios.post(URL, formData,{ withCredentials: true });
       const token = response.data.token;
+      setIsLoggedIn(true);
       localStorage.setItem('authToken', token);
       toast("Login success", {
         position: "top-center",
