@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLinkedinIn, FaFacebook, FaInstagram,FaWhatsapp, FaTwitter} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,10 +14,11 @@ const Footer = () => {
           </p>
           <div className="flex space-x-4 mt-4">
             {/* Social Icons */}
-            <a href="#" className="text-white hover:text-red-600"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="text-white hover:text-red-600"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="text-white hover:text-red-600"><i className="fab fa-linkedin-in"></i></a>
-            <a href="#" className="text-white hover:text-red-600"><i className="fab fa-whatsapp"></i></a>
+            <a href="#" className="text-white hover:text-red-600"><FaFacebook/></a>
+            <a href="#" className="text-white hover:text-red-600"><FaInstagram/></a>
+            <a href="#" className="text-white hover:text-red-600"><FaLinkedinIn/></a>
+            <a href="#" className="text-white hover:text-red-600"><FaWhatsapp/></a>
+            <a href="#" className="text-white hover:text-red-600"><FaTwitter/></a>
           </div>
         </div>
 
@@ -71,11 +73,11 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <i className="fas fa-envelope text-red-600"></i>
-              <span className="ml-2 text-gray-400">info@pizzan.com</span>
+              <span className="ml-2 text-gray-400">info@sliceofheaven.com</span>
             </li>
             <li className="flex items-center">
               <i className="fas fa-envelope text-red-600"></i>
-              <span className="ml-2 text-gray-400">info.example@pizzan.com</span>
+              <span className="ml-2 text-gray-400">info.example@sliceofheaven.com</span>
             </li>
           </ul>
         </div>

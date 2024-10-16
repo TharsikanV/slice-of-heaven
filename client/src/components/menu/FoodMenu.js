@@ -175,7 +175,7 @@ function FoodMenu() {
               </div>
             </div>
             {/* About more button */}
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 mb-4 flex justify-center space-x-5">
               <button className="px-6 py-2 rounded-md bg-red-500 text-white hover:bg-red-600">About More</button>
               <div className="mt-4">
                 <h5 className="font-bold text-lg">Ronald Richards</h5>

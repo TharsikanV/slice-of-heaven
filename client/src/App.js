@@ -17,11 +17,14 @@ import ReservationManagement from './components/admin/ReservationManagement.js';
 import Footer from './components/layouts/Footer.js';
 import FoodGallery from './components/menu/FoodGallery.js';
 import DownloadAppSection from './components/user/DownloadAppSection.js';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 // import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('authToken'));
+  // Create a reference for the Reservation section
+  const reservationRef = useRef(null);
+  const menuItemsRef=useRef(null);
   return (
     <Router>
       <div className="App">
@@ -33,14 +36,19 @@ function App() {
           <Route path="/admin/reservations" element={<ReservationManagement/>} />
           <Route path="/" element={
             <>
-            <Header setIsLoggedIn={setIsLoggedIn}/>
-            <HeroSection />
+            <Header setIsLoggedIn={setIsLoggedIn} reservationRef={reservationRef}/>
+            <HeroSection menuItemsRef={menuItemsRef}/>
             <FoodMenu />
             <Offer />
+            <div ref={menuItemsRef}>
             <MenuItems />
+            </div>
             <DownloadAppSection/>
             <ExpertChefs />
-            <Reservation />
+            {/* Assign the reference to the Reservation component */}
+            <div ref={reservationRef}>
+                <Reservation />
+            </div>
             <ShowBlogs />
             <FoodGallery/>
             <Footer/>

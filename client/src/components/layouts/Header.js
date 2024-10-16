@@ -3,7 +3,7 @@ import { FaSearch, FaShoppingCart, FaLinkedinIn, FaFacebook, FaInstagram, FaTwit
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export default function Header({setIsLoggedIn}) {
+export default function Header({setIsLoggedIn,reservationRef}) {
     const authToken = localStorage.getItem('authToken');
     const navigate = useNavigate();
 
@@ -30,6 +30,10 @@ export default function Header({setIsLoggedIn}) {
         }
     };
 
+    // Scroll to Reservation section
+    const scrollToReservation = () => {
+        reservationRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
     return (
         <header className="bg-white">
             {/* Top bar */}
@@ -86,7 +90,7 @@ export default function Header({setIsLoggedIn}) {
                             <FaShoppingCart className="hover:text-gray-300" />
                             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5">0</span>
                         </Link>
-                        <button className="bg-red-500 px-6 py-2 text-sm rounded hover:bg-red-600">
+                        <button onClick={scrollToReservation}  className="bg-red-500 px-6 py-2 text-sm rounded hover:bg-red-600">
                             BOOK A TABLE
                         </button>
                     </div>

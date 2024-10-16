@@ -26,7 +26,7 @@ export default function MenuItems() {
     setSelectedCategory(category);
   };
 
-  // Pagination logic
+  // Pagination logic 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = menuItems.slice(indexOfFirstItem, indexOfLastItem);
@@ -59,7 +59,7 @@ export default function MenuItems() {
           onClick={() => handleCategoryClick('Beef Burger')}
         >
           <img src="../images/pizza.jpg" alt="Beef Burger" className="mx-auto mb-2" />
-          <p className="font-bold">Beef Burger</p>
+          <p className="font-bold">Veg Pizza</p>
         </button>
         <button
           className={`text-center p-4 rounded-lg ${selectedCategory === 'Chicken Pizza' ? 'bg-red-500 text-white' : 'bg-white'}`}
@@ -73,21 +73,21 @@ export default function MenuItems() {
           onClick={() => handleCategoryClick('Fresh Pasta')}
         >
           <img src="../images/pizza.jpg" alt="Fresh Pasta" className="mx-auto mb-2" />
-          <p>Fresh Pasta</p>
+          <p>BBQ Chicken Pizza</p>
         </button>
         <button
           className={`text-center p-4 rounded-lg ${selectedCategory === 'Hot Sushi' ? 'bg-red-500 text-white' : 'bg-white'}`}
           onClick={() => handleCategoryClick('Hot Sushi')}
         >
           <img src="../images/pizza.jpg" alt="Hot Sushi" className="mx-auto mb-2" />
-          <p>Hot Sushi</p>
+          <p>Pepperoni Pizza</p>
         </button>
         <button
           className={`text-center p-4 rounded-lg ${selectedCategory === 'Drink & Juice' ? 'bg-red-500 text-white' : 'bg-white'}`}
           onClick={() => handleCategoryClick('Drink & Juice')}
         >
           <img src="../images/pizza.jpg" alt="Drink & Juice" className="mx-auto mb-2" />
-          <p>Drink & Juice</p>
+          <p>Buffalo Pizza</p>
         </button>
       </div>
 
