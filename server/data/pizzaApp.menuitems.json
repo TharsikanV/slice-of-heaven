@@ -1,0 +1,192 @@
+[{
+  "_id": {
+    "$oid": "670e57c3c276cdf28daccebc"
+  },
+  "name": "Pepperoni Pizza",
+  "description": "Delicious pizza topped with spicy pepperoni and mozzarella cheese.",
+  "price": 14.99,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm5dwKp1McRLdpaT2n0SmrcN1-HTVo9jQN8A&s",
+  "createdAt": {
+    "$date": "2024-10-15T11:53:39.523Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T11:53:39.523Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e5805c276cdf28daccec0"
+  },
+  "name": "Margherita Pizza",
+  "description": "Classic pizza with fresh mozzarella, tomatoes, and basil leaves.",
+  "price": 12.99,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1EXyUNjrliNeMfxpuMoI_olyhT1t0rb5ICQ&s",
+  "createdAt": {
+    "$date": "2024-10-15T11:54:45.742Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T11:54:45.742Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e67cfc276cdf28daccefc"
+  },
+  "name": "BBQ Chicken Pizza",
+  "description": "Pizza with BBQ sauce, grilled chicken, red onions, and cilantro",
+  "price": 16.99,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSteLSidNyyHtAwj2p6ZU3Z422EWw5_FZ4pRA&s",
+  "createdAt": {
+    "$date": "2024-10-15T13:02:07.708Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:02:07.708Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e681ec276cdf28daccf00"
+  },
+  "name": "Hawaiian Pizza",
+  "description": "Topped with ham, pineapple, and mozzarella cheese.",
+  "price": 13.99,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZBkAnXFHe9PFmGFr8ET6uRbEkK6sBKzrvfEmHxQZHcnjrBE_EGQaTMulbWjxKSXqwEg&usqp=CAU",
+  "createdAt": {
+    "$date": "2024-10-15T13:03:26.955Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:03:26.955Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e6852c276cdf28daccf04"
+  },
+  "name": "Veggie Supreme Pizza",
+  "description": "Loaded with bell peppers, onions, mushrooms, and black olives.",
+  "price": 15.99,
+  "imageUrl": "https://cdn.yemek.com/mnresize/1250/833/uploads/2022/03/ev-usulu-pizza-yemekcom.jpg",
+  "createdAt": {
+    "$date": "2024-10-15T13:04:18.227Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:04:18.227Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e689ac276cdf28daccf08"
+  },
+  "name": "Meat Lover's Pizza",
+  "description": "Topped with pepperoni, sausage, ham, and bacon.",
+  "price": 17.99,
+  "imageUrl": "https://content.jdmagicbox.com/comp/guwahati/k8/9999px361.x361.181113141412.z8k8/catalogue/domino-s-kamakhya-guwahati-pizza-outlets-3lhu9lokdm.jpg",
+  "createdAt": {
+    "$date": "2024-10-15T13:05:30.216Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:05:30.216Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e68c2c276cdf28daccf0c"
+  },
+  "name": "Four Cheese Pizza",
+  "description": "A blend of mozzarella, cheddar, parmesan, and blue cheese.",
+  "price": 14.49,
+  "imageUrl": "https://content.jdmagicbox.com/comp/udaipur-rajasthan/d8/9999px294.x294.221112161953.f2d8/catalogue/pizza-planet-cafe-udaipur-city-udaipur-rajasthan-pizza-outlets-pw2zddgw2x.jpg",
+  "createdAt": {
+    "$date": "2024-10-15T13:06:10.589Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:06:10.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e68e8c276cdf28daccf10"
+  },
+  "name": "Buffalo Chicken Pizza",
+  "description": "Pizza with spicy buffalo sauce, grilled chicken, and ranch drizzle.",
+  "price": 15.99,
+  "imageUrl": "https://images.jdmagicbox.com/comp/def_content_category/pizza-outlets-pizza-wings/136822205-261501718707268-4918487156046235062-n-pizza-outlets-pizza-wings-5-mvuyd-250.jpg",
+  "createdAt": {
+    "$date": "2024-10-15T13:06:48.702Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:06:48.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e6921c276cdf28daccf14"
+  },
+  "name": "Pesto Pizza",
+  "description": "Fresh pesto sauce topped with mozzarella, tomatoes, and arugula.",
+  "price": 13.99,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgRwjZ_8-Qgk4NNQItr4sW878V6aMkRBkxaOv4IROm01lfY9mZyC6MTMyFli3MqOwS7g&usqp=CAU",
+  "createdAt": {
+    "$date": "2024-10-15T13:07:45.097Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:07:45.097Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e6967c276cdf28daccf18"
+  },
+  "name": "Mushroom Truffle Pizza",
+  "description": "A gourmet pizza with truffle oil, mushrooms, and mozzarella.",
+  "price": 18.99,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6G5PIpTqTp_UMzWvjkOLlsfEsCNCqNK_KIk5Jew8l2YkAGch9ZdNpR1u4Hs1Ad-YuWlM&usqp=CAU",
+  "createdAt": {
+    "$date": "2024-10-15T13:08:55.802Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:08:55.802Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e69a5c276cdf28daccf1d"
+  },
+  "name": "Spinach and Feta Pizza",
+  "description": "Topped with fresh spinach, feta cheese, and olive oil.",
+  "price": 13.49,
+  "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/0f/1c/e6/37/simply-veg-delight-pizza.jpg",
+  "createdAt": {
+    "$date": "2024-10-15T13:09:57.893Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:09:57.893Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670e69cfc276cdf28daccf20"
+  },
+  "name": "Tandoori Chicken Pizza",
+  "description": "Indian-inspired pizza with tandoori chicken, onions, and green peppers.",
+  "price": 16.49,
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjGqGwg_LCg6saYyPETvn3RwNuAQHNyYou6DmbgKQaWMz9dvAyonV42709V9UNmcDuWtQ&usqp=CAU",
+  "createdAt": {
+    "$date": "2024-10-15T13:10:39.494Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-15T13:10:39.494Z"
+  },
+  "__v": 0
+}]

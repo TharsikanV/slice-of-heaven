@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "670a2aac8d7a9cf75c276fa1"
+  },
+  "name": "Visvalinkam tharsikan",
+  "email": "tharsikan6@gmail.com",
+  "password": "$2a$10$50DWkumB68Evw9j2hSiyTujnsYAlJd2jusT8l4IFWs1qAkW9R5cQK",
+  "createdAt": {
+    "$date": "2024-10-12T07:52:12.950Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-12T07:52:12.950Z"
+  },
+  "__v": 0
+}]
